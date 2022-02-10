@@ -23,6 +23,20 @@ class AbstractModel extends Model
     }
 
     /**
+     * 查询单条 - 根据ID.
+     * @param int $id ID
+     * @param array|string[] $columns 查询字段
+     * @param string $pid 主键ID
+     * @return array 数组
+     */
+    public function getOneByParamId(int $id, array $columns = ['*'], string $pid): array
+    {
+        $data          = self::query()->where($pid, $id)->first($columns);
+        $data || $data = collect([]);
+        return $data->toArray();
+    }
+
+    /**
      * 查询多条 - 根据ID.
      * @param array $ids ID
      * @param array|string[] $columns 查询字段
@@ -91,6 +105,19 @@ class AbstractModel extends Model
     {
         $newData = $this->columnsFormat($data, true, true);
         return self::query()->where('id', $id)->update($newData);
+    }
+
+    /**
+     * 修改单条 - 根据ID.
+     * @param int $id id
+     * @param array $data 修改数据
+     * @param string $pid 主键ID
+     * @return int 修改条数
+     */
+    public function updateOneByParamId(int $id, array $data, string $pid): int
+    {
+        $newData = $this->columnsFormat($data, true, true);
+        return self::query()->where($pid, $id)->update($newData);
     }
 
     /**
