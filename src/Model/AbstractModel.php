@@ -68,7 +68,13 @@ class AbstractModel extends Model
         ## 分页
         $data          = $model->paginate($perPage, $columns, $pageName, $page);
         $data || $data = collect([]);
-        return $data->toArray();
+        $res = $data->toArray();
+        if($res){
+            unset($res['first_page_url']);
+            unset($res['last_page_url']);
+            unset($res['path']);
+        }
+        return $res;
     }
 
     /**
