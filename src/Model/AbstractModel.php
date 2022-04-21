@@ -72,6 +72,8 @@ class AbstractModel extends Model
         if($res){
             unset($res['first_page_url']);
             unset($res['last_page_url']);
+            unset($res['next_page_url']);
+            unset($res['prev_page_url']);
             unset($res['path']);
         }
         return $res;
