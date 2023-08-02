@@ -6,7 +6,7 @@
         "hyperf",
         "framework"
     ],
-    "description": "framework",
+    "description": "hyperf3.0 framework",
     "autoload": {
         "psr-4": {
             "VsWest\\Framework\\": "src/"
