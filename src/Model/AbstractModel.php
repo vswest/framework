@@ -29,7 +29,7 @@ class AbstractModel extends Model
      * @param string $pid 主键ID
      * @return array 数组
      */
-    public function getOneByParamId(int $id, string $pid, array $columns = ['*']): array
+    public function getOneByParamId(int $id, array $columns = ['*'], string $pid): array
     {
         $data          = self::query()->where($pid, $id)->first($columns);
         $data || $data = collect([]);
