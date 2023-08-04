@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace VsWest\Framework\Model;
 
 use Hyperf\DbConnection\Model\Model;
-use Hyperf\Utils\Str;
+use Hyperf\Stringable\Str;
 
 class AbstractModel extends Model
 {

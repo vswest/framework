@@ -7,7 +7,7 @@ namespace VsWest\Framework\Middleware\Traits;
 use FastRoute\Dispatcher;
 use Hyperf\HttpServer\Contract\RequestInterface;
 use Hyperf\HttpServer\Router\Dispatched;
-use Hyperf\Utils\ApplicationContext;
+use Hyperf\context\ApplicationContext;
 use VsWest\Framework\Constants\ErrorCode;
 use VsWest\Framework\Exception\CommonException;
 
