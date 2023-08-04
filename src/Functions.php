@@ -41,7 +41,7 @@ if (! function_exists('isDiRequestInit')) {
     function isDiRequestInit(): bool
     {
         try {
-            \Hyperf\context\ApplicationContext::getContainer()->get(\Hyperf\HttpServer\Contract\RequestInterface::class)->input('test');
+            \Hyperf\Utils\ApplicationContext::getContainer()->get(\Hyperf\HttpServer\Contract\RequestInterface::class)->input('test');
             $res = true;
         } catch (\TypeError $e) {
             $res = false;

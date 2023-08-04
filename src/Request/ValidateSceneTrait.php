@@ -67,7 +67,7 @@ trait ValidateSceneTrait
         $attributes                                       = [];
         method_exists($this, 'attributes') && $attributes = $this->attributes();
 
-        $validator = \Hyperf\context\ApplicationContext::getContainer()->get(ValidatorFactoryInterface::class);
+        $validator = \Hyperf\Utils\ApplicationContext::getContainer()->get(ValidatorFactoryInterface::class);
         $validator = $validator->make($inputs, $rules, $messages, $attributes);
 
         if ($validator->fails()) {

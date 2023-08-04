@@ -1,6 +1,7 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
+
 namespace VsWest\Framework\Action;
 
 use Hyperf\Di\Annotation\Inject;
@@ -10,13 +11,21 @@ use Psr\Container\ContainerInterface;
 
 abstract class AbstractAction
 {
-    
-    #[Inject]
-    protected ContainerInterface $container;
-    
-    #[Inject]
-    protected RequestInterface $request;
-    
-    #[Inject]
-    protected ResponseInterface $response;
+    /**
+     * @Inject
+     * @var ContainerInterface
+     */
+    protected $container;
+
+    /**
+     * @Inject
+     * @var RequestInterface
+     */
+    protected $request;
+
+    /**
+     * @Inject
+     * @var ResponseInterface
+     */
+    protected $response;
 }

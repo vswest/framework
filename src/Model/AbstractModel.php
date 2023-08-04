@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace VsWest\Framework\Model;
 
 use Hyperf\DbConnection\Model\Model;
-use Hyperf\Stringable\Str;
+use Hyperf\Utils\Str;
 
 class AbstractModel extends Model
 {
@@ -29,7 +29,7 @@ class AbstractModel extends Model
      * @param string $pid 主键ID
      * @return array 数组
      */
-    public function getOneByParamId(int $id, array $columns = ['*'], string $pid): array
+    public function getOneByParamId(int $id, string $pid, array $columns = ['*']): array
     {
         $data          = self::query()->where($pid, $id)->first($columns);
         $data || $data = collect([]);
@@ -72,6 +72,8 @@ class AbstractModel extends Model
         if($res){
             unset($res['first_page_url']);
             unset($res['last_page_url']);
+            unset($res['next_page_url']);
+            unset($res['prev_page_url']);
             unset($res['path']);
         }
         return $res;

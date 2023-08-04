@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace VsWest\Framework\Middleware;
 
-use Hyperf\Context\Context;
+use Hyperf\Utils\Context;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;

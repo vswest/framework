@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace VsWest\Framework\Log;
 
-use Hyperf\context\ApplicationContext;
+use Hyperf\Utils\ApplicationContext;
 
 class Log
 {
